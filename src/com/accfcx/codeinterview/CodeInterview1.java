@@ -1,19 +1,34 @@
 package com.accfcx.codeinterview;
 
+import java.math.BigInteger;
 import java.util.*;
 
 public class CodeInterview1 {
 
     public static void main(String[] args) {
 	// write your code here
-        String s = "I am a student.";
-        LinkedList<Integer> list = new LinkedList<>();
-//        int[] array = {10,14,12,11};
-        int[] array = {2,3,4,2,6,2,5,1};
-        System.out.println(maxInWindows(array, 3));
-        int i = 1;
-        int j = 2;
-        int k = 3;
+//        String s = "I am a student.";
+//        LinkedList<Integer> list = new LinkedList<>();
+////        int[] array = {10,14,12,11};
+//        int[] array = {2,3,4,2,6,2,5,1};
+//        System.out.println(maxInWindows(array, 3));
+//        int i = 1;
+//        int j = 2;
+//        int k = 3;
+//        System.out.println(alibabaFirst(1000000000));
+//        System.out.println(alibabaFirst(3));
+//        int[][] dp = new int[10000001][10000001];
+//        System.out.println(count(dp));
+    }
+
+    public static long count(int[][] c) {
+            //离线计算范围内所有值
+            for (int i = 0; i < 1000000001; i++)
+                c[i][0] = 1;
+            for (int i = 1; i < 1000000001; i++)
+                for (int j = 1; j < 110; j++)
+                    c[i][j] = c[i - 1][j - 1] + c[i - 1][j]; //递推关系
+            return c[100000000][1000000000];
     }
 
     public void test1() {
@@ -346,4 +361,85 @@ public class CodeInterview1 {
         System.out.println(queue);
         return result;
     }
+
+    public static long alibabaFirst(int n) {
+        // 组合问题
+        long sum = 0;
+        int modNum = (1000000007);
+        for(int i = 1; i <= n; i++) {
+            long temp = i * Combine(n, i, modNum);
+            sum += temp;
+            sum %= modNum;
+        }
+        return (sum % modNum);
+    }
+
+    // 组合计算 C(n,m) = C(n, n-m) = n!/(m! * (n-m)!)
+    public static long Combine(int n, int m, int p) {
+        int half = n / 2;
+        if (m > half)
+        {
+            m = n - m;
+        }
+        // 分子的排列数
+        long numerator = A(n, m, p);
+        // 分母的排列数
+        long denominator = A(m, m, p);
+        return numerator / denominator;
+    }
+
+    public static long A(int n, int m, int p)
+    {
+        long result = 1;
+        // 循环m次,如A(6,2)需要循环2次，6*5
+        for (int i = m; i > 0; i--)
+        {
+            result *= n;
+            result %= p;
+            n--;// 下一次减一
+        }
+        return result % p;
+    }
 }
+
+
+//import java.io.*;
+//        import java.util.*;
+//class Test {
+//}
+//public class Main
+//{
+//    public static void main(String args[])
+//    {
+//        Scanner cin = new Scanner(System.in);
+//        int a, b;
+//        while(cin.hasNextInt())
+//        {
+//            a = cin.nextInt();
+//            b = cin.nextInt();
+//            System.out.println(a + b);
+//        }
+//    }
+//}
+
+//    public static void main(String args[])
+//    {
+//        Scanner cin = new Scanner(System.in);
+//        int N, M;
+//        // 读取输入，直到没有整型数据可读
+//        while(cin.hasNextInt())
+//        {
+//            // 读取N 和 M
+//            N = cin.nextInt();
+//            M = cin.nextInt();
+//            System.out.println(String.format("%d %d", N, M));
+//            // 读取接下来M行
+//            for (int i=0; i<M; i++) {
+//                // 读取每行的a b c
+//                int a = cin.nextInt(),
+//                        b = cin.nextInt(),
+//                        c = cin.nextInt();
+//                System.out.println(String.format("%d %d %d", a, b, c));
+//            }
+//        }
+//    }
