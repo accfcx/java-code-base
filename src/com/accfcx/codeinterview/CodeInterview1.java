@@ -23,11 +23,14 @@ public class CodeInterview1 {
 
     public static long count(int[][] c) {
             //离线计算范围内所有值
-            for (int i = 0; i < 1000000001; i++)
+            for (int i = 0; i < 1000000001; i++) {
                 c[i][0] = 1;
-            for (int i = 1; i < 1000000001; i++)
-                for (int j = 1; j < 110; j++)
+            }
+            for (int i = 1; i < 1000000001; i++) {
+                for (int j = 1; j < 110; j++) {
                     c[i][j] = c[i - 1][j - 1] + c[i - 1][j]; //递推关系
+                }
+            }
             return c[100000000][1000000000];
     }
 
