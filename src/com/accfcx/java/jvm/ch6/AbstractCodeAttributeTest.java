@@ -1,4 +1,4 @@
-package com.accfcx.jvm.ch6;
+package com.accfcx.java.jvm.ch6;
 
 abstract class AbstractCodeAttributeTest {
     public void test() {

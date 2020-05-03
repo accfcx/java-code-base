@@ -1,4 +1,4 @@
-package com.accfcx.jvm.ch3;
+package com.accfcx.java.jvm.ch3;
 
 import java.util.logging.Logger;
 

@@ -1,4 +1,4 @@
-package com.accfcx.jvm.ch4;
+package com.accfcx.java.jvm.ch4;
 
 public class JhsdbTest {
     // 采用性能监控和故障分析工具-jhsdb 分析 静态类对象，类实例，局部对象存放的位置！！！

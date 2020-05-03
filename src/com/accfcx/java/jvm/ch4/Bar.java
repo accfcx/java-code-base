@@ -1,4 +1,4 @@
-package com.accfcx.jvm.ch4;
+package com.accfcx.java.jvm.ch4;
 
 import java.util.HashMap;
 import java.util.Map;
