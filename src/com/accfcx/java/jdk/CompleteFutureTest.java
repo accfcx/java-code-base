@@ -3,6 +3,9 @@ package com.accfcx.java.jdk;
 import java.util.concurrent.CompletableFuture;
 import java.util.logging.Logger;
 
+/**
+ * @author accfcx
+ */
 public class CompleteFutureTest {
     private static final Logger loger = Logger.getLogger("Test!!!!");
 
