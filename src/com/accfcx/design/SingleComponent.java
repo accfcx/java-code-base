@@ -1,4 +1,4 @@
-package com.accfcx;
+package com.accfcx.design;
 
 import com.accfcx.design.BaseComponent;
 
