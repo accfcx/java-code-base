@@ -43,6 +43,7 @@ public class ByteCodeAndDynamicProxy {
     }
 
     public static void main(String[] args) {
+        System.getProperties().put("jdk.proxy.ProxyGenerator.saveGeneratedFiles", "true");
         IHello iHello = (IHello) new DynamicProxy().bind(new Hello());
         iHello.say();
     }
