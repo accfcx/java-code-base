@@ -1,0 +1,9 @@
+syntax = "proto3";
+package com.accfcx.java.protocol;
+option java_package = "java.accfcx.java.protocol";
+option java_outer_classname = "MsgProtos";
+
+message Msg {
+  uint32 id = 1;
+  string content = 2;
+}
